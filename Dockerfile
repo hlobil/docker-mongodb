@@ -26,13 +26,17 @@ RUN 	apt-get update && \
 # define mountable directories
 VOLUME ["/data/db"]
 
+# define working directory.
+WORKDIR /data
+
 # expose ports
 #   - 27017: process
 #   - 28017: http
 EXPOSE 27017
 EXPOSE 28017
 
-ENTRYPOINT ["usr/bin/mongod", "--dbpath", "data/db"]
+# ENTRYPOINT ["usr/bin/mongod", "--dbpath", "data/db"]
 
 # define default command
-CMD ["--smallfiles"]
+#CMD ["--smallfiles"]
+CMD ["mongod"]
