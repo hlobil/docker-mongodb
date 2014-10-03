@@ -16,7 +16,8 @@ ENV MONGODB_VERSION 2.6.4
 
 RUN 	apt-get update && \
 	apt-get -yq install mongodb-org=${MONGODB_VERSION} && \
-	mkdir -p /data/db
+	mkdir -p /data/db && \
+	rm -rf /var/lib/apt/lists/*
 
 
 
