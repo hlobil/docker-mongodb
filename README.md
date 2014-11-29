@@ -16,6 +16,7 @@ docker-mongodb
 ``` bash
 docker run -d \
   --name mongodb \
+  --restart=always \
   -p 27017:27017 \
   recipediary/mongodb
 ```
